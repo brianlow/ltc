@@ -1,0 +1,120 @@
+c:\Dev\ltc>litecoind getblockhash 100
+97ea5cb96baa9448d494eb083a7b1b6884e99a89522d89150e0b4378c742a6da
+
+
+c:\Dev\ltc>litecoind getblock 97ea5cb96baa9448d494eb083a7b1b6884e99a89522d89150e0b4378c742a6da
+{
+    "hash" : "97ea5cb96baa9448d494eb083a7b1b6884e99a89522d89150e0b4378c742a6da",
+    "confirmations" : 470323,
+    "size" : 215,
+    "height" : 100,
+    "version" : 1,
+    "merkleroot" : "1ea3f171d4b77016f7af96e2f43b7298529ef6f987a5f1c9fe560765f1565afd",
+    "tx" : [
+        "1ea3f171d4b77016f7af96e2f43b7298529ef6f987a5f1c9fe560765f1565afd"
+    ],
+    "time" : 1318475166,
+    "nonce" : 295,
+    "bits" : "1e0ffff0",
+    "difficulty" : 0.00024414,
+    "previousblockhash" : "08acdac54e2c07cf37fb9839f765956656a166f519485d0bd9f0f4304b0b04fb",
+    "nextblockhash" : "4267a473cec9a1c30d09cbaa160c21d40fd4f2d88a3ca47d6b6d8dc252d0b3ae"
+}
+
+
+c:\Dev\ltc>litecoind getrawtransaction 1ea3f171d4b77016f7af96e2f43b7298529ef6f987a5f1c9fe560765f1565afd
+
+c:\Dev\ltc>litecoind decoderawtransaction 01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff07049e55964e010affffffff0100f2052a01000000434104458bf7d944ce58c007d0f16fa54c0640694568954e162c06be0a0cba7275714b6672c589e7393fa48f8a5f6b6259061d394e9db005651d1bb28349d31339daa8ac00000000
+
+{
+    "txid" : "1ea3f171d4b77016f7af96e2f43b7298529ef6f987a5f1c9fe560765f1565afd",
+    "version" : 1,
+    "locktime" : 0,
+    "vin" : [
+        {
+            "coinbase" : "049e55964e010a",
+            "sequence" : 4294967295
+        }
+    ],
+    "vout" : [
+        {
+            "value" : 50.00000000,
+            "n" : 0,
+            "scriptPubKey" : {
+                "asm" : "04458bf7d944ce58c007d0f16fa54c0640694568954e162c06be0a0cba7275714b6672c589e7393fa48f8a5f6b62590
+61d394e9db005651d1bb28349d31339daa8 OP_CHECKSIG",
+                "hex" : "4104458bf7d944ce58c007d0f16fa54c0640694568954e162c06be0a0cba7275714b6672c589e7393fa48f8a5f6b625
+9061d394e9db005651d1bb28349d31339daa8ac",
+                "reqSigs" : 1,
+                "type" : "pubkey",
+                "addresses" : [
+                    "LfcUcxALy1gSeqZLrixAm4ETZbEWA7GLat"
+                ]
+            }
+        }
+    ]
+}
+
+---------------------------------
+
+c:\Dev\ltc>litecoind getrawtransaction ef6a94517d9c9626d26a1b3efbc75e3fbae238d34a19a315cd17a929a8ed5eb6
+0100000001d85a91e4b39f5a9a27efb0720cb204393dd94e3ba75af092780d304d8014c238010000006a4730440220186eb7dccec8b3ff2cb8535396
+94067af3668eac80442bbc85f3f98cf2de38120220135fad2fff7daa47b52619db7f8e1e591c5cef8069d902b6fa4967473e1168650121032a665586
+71271615456eaf1c9f4e3d19228a9b87a51491d2ef8122e2d27f97bbffffffff024f54e51e000000001976a9144048a5fb9fd21348a67dcd4fd661bd
+47c25ca2a388ac8055c820000000001976a914576d1361b1ac40764f710e5389525fee67647d0b88ac00000000
+
+0100000001d85a91e4b39f5a9a27efb0720cb204393dd94e3ba75af092780d304d8014c238010000006a4730440220186eb7dccec8b3ff2cb853539694067af3668eac80442bbc85f3f98cf2de38120220135fad2fff7daa47b52619db7f8e1e591c5cef8069d902b6fa4967473e1168650121032a66558671271615456eaf1c9f4e3d19228a9b87a51491d2ef8122e2d27f97bbffffffff024f54e51e000000001976a9144048a5fb9fd21348a67dcd4fd661bd47c25ca2a388ac8055c820000000001976a914576d1361b1ac40764f710e5389525fee67647d0b88ac00000000
+
+
+c:\Dev\ltc>"c:\Program Files (x86)\Litecoin\daemon\litecoind.exe" -datadir=D:\NonData\litecoin\devdatadir\ -rpcuser=user
+ -rpcpassword=password -rpcport=9332 -txindex=1 decoderawtransaction 0100000001d85a91e4b39f5a9a27efb0720cb204393dd94e3ba
+75af092780d304d8014c238010000006a4730440220186eb7dccec8b3ff2cb853539694067af3668eac80442bbc85f3f98cf2de38120220135fad2ff
+f7daa47b52619db7f8e1e591c5cef8069d902b6fa4967473e1168650121032a66558671271615456eaf1c9f4e3d19228a9b87a51491d2ef8122e2d27
+f97bbffffffff024f54e51e000000001976a9144048a5fb9fd21348a67dcd4fd661bd47c25ca2a388ac8055c820000000001976a914576d1361b1ac4
+0764f710e5389525fee67647d0b88ac00000000
+{
+    "txid" : "ef6a94517d9c9626d26a1b3efbc75e3fbae238d34a19a315cd17a929a8ed5eb6",
+    "version" : 1,
+    "locktime" : 0,
+    "vin" : [
+        {
+            "txid" : "38c214804d300d7892f05aa73b4ed93d3904b20c72b0ef279a5a9fb3e4915ad8",
+            "vout" : 1,
+            "scriptSig" : {
+                "asm" : "30440220186eb7dccec8b3ff2cb853539694067af3668eac80442bbc85f3f98cf2de38120220135fad2fff7daa47b52
+619db7f8e1e591c5cef8069d902b6fa4967473e11686501 032a66558671271615456eaf1c9f4e3d19228a9b87a51491d2ef8122e2d27f97bb",
+                "hex" : "4730440220186eb7dccec8b3ff2cb853539694067af3668eac80442bbc85f3f98cf2de38120220135fad2fff7daa47b
+52619db7f8e1e591c5cef8069d902b6fa4967473e1168650121032a66558671271615456eaf1c9f4e3d19228a9b87a51491d2ef8122e2d27f97bb"
+            },
+            "sequence" : 4294967295
+        }
+    ],
+    "vout" : [
+        {
+            "value" : 5.18345807,
+            "n" : 0,
+            "scriptPubKey" : {
+                "asm" : "OP_DUP OP_HASH160 4048a5fb9fd21348a67dcd4fd661bd47c25ca2a3 OP_EQUALVERIFY OP_CHECKSIG",
+                "hex" : "76a9144048a5fb9fd21348a67dcd4fd661bd47c25ca2a388ac",
+                "reqSigs" : 1,
+                "type" : "pubkeyhash",
+                "addresses" : [
+                    "LR5rYBpqWcX7TYkswmwK6oehvd9sbRKMRn"
+                ]
+            }
+        },
+        {
+            "value" : 5.50000000,
+            "n" : 1,
+            "scriptPubKey" : {
+                "asm" : "OP_DUP OP_HASH160 576d1361b1ac40764f710e5389525fee67647d0b OP_EQUALVERIFY OP_CHECKSIG",
+                "hex" : "76a914576d1361b1ac40764f710e5389525fee67647d0b88ac",
+                "reqSigs" : 1,
+                "type" : "pubkeyhash",
+                "addresses" : [
+                    "LTCDiceWcG2mSZDswWVL4fm6cKiooYUzvt"
+                ]
+            }
+        }
+    ]
+}
