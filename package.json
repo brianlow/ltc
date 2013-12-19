@@ -1,0 +1,14 @@
+{
+  "name": "LTC",
+  "description": "LTC",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.4.7",
+    "ejs": "0.8.5",
+    "level" : "0.18.0",
+    "ff" : "0.2.0",
+    "node-litecoin" : "1.0.1",
+    "underscore" : "1.5.2"
+  }
+}

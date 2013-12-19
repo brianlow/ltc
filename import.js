@@ -52,6 +52,7 @@ function importBlock(index) {
 		function(block, transactions) {
 			var group = f.group();
 			transactions.forEach(function(transaction) {
+				transaction.type = "transaction";
 				db.put(transaction.txid, transaction, group.wait());
 			});
 		}
