@@ -1,3 +1,7 @@
+1. start litecoind.bat
+2. open another command prompt and try the following commands
+
+
 c:\Dev\ltc>litecoind getblockhash 100
 97ea5cb96baa9448d494eb083a7b1b6884e99a89522d89150e0b4378c742a6da
 
