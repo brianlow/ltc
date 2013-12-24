@@ -9,7 +9,13 @@
     "level": "0.18.0",
     "ff": "0.2.0",
     "node-litecoin": "1.0.1",
-    "underscore": "1.5.2"
+    "underscore": "1.5.2",
+    "ejs-locals": "~1.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "node-sass": "~0.7.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-sass": "~0.8.0"
+  }
 }

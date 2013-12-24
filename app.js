@@ -1,6 +1,7 @@
-var express = require('express');
-var path = require('path');
-var level = require('level');
+var express = require('express')
+	, engine = require('ejs-locals')
+	, path = require('path')
+	, level = require('level');
 
 var db = level('c:\\temp\\ltc.leveldb', {
 	valueEncoding: 'json'
@@ -10,10 +11,12 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('ejs', engine);
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
 
 if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
