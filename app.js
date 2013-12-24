@@ -23,7 +23,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'LTC' });
 });
 
 app.get('/id/:id([a-z0-9]+)', function(req, res) {

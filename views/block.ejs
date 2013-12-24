@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-  <head>
-    <title>Block #<%= height %></title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/app.css" />
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-  </head>
-  <body>
-    <h1>Block #<%= height %></h1>
 
-    <p>Hash <%= hash %></p>
-    <p><a href="https://litecoin.info/Block_hashing_algorithm">Merkle root</a> <%= merkleroot %></p>
-    <p>Previous Block <a href="/id/<%= previousblockhash %>"><%= previousblockhash %></a></p>
-    <p>Next Block <a href="/id/<%= nextblockhash %>"><%= previousblockhash %></a></p>
+<% title = 'Block #' + height %>
+<% layout('_layout') -%>
 
-  	<p>Block Created <%= new Date(time*1000) %></p>
-  	<p>In ??? LTC (??? USD)</p>
-  	<p>Out ??? LTC</p>
-  	<p>Block Rewad ??? LTC</p>
-  	<p>Transaction Fees ??? LTC</p>
+<h1><%= title %></h1>
 
-    <p><a href="https://litecoin.info/Block_hashing_algorithm">Nonce</a> <%= nonce %></p>
-    <p><a href="https://litecoin.info/Block_hashing_algorithm">Bits</a> <%= bits %></p>
-    <p><a href="https://en.bitcoin.it/wiki/Target#What_is_the_target_now.3F">Difficulty</a> <%= difficulty %></p>
+<p>Hash <%= hash %></p>
+<p><a href="https://litecoin.info/Block_hashing_algorithm">Merkle root</a> <%= merkleroot %></p>
+<p>Previous Block <a href="/id/<%= previousblockhash %>"><%= previousblockhash %></a></p>
+<p>Next Block <a href="/id/<%= nextblockhash %>"><%= previousblockhash %></a></p>
 
-    <p>Size <%= size %> bytes</p>
-    <p>Version <%= version %></p>
+<p>Block Created <%= new Date(time*1000) %></p>
+<p>In ??? LTC (??? USD)</p>
+<p>Out ??? LTC</p>
+<p>Block Rewad ??? LTC</p>
+<p>Transaction Fees ??? LTC</p>
 
-    <script src="/bower_components/jquery/jquery.js"></script>
-    <script src="/bower_components/foundation/js/foundation.min.js"></script>
-    <script src="/js/app.js"></script>
-  </body>
-</html>
+<p><a href="https://litecoin.info/Block_hashing_algorithm">Nonce</a> <%= nonce %></p>
+<p><a href="https://litecoin.info/Block_hashing_algorithm">Bits</a> <%= bits %></p>
+<p><a href="https://en.bitcoin.it/wiki/Target#What_is_the_target_now.3F">Difficulty</a> <%= difficulty %></p>
+
+<p>Size <%= size %> bytes</p>
+<p>Version <%= version %></p>
+
