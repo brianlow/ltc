@@ -1,0 +1,44 @@
+<% title = 'Transaction #' + shortTxId %>
+<% layout('_layout') -%>
+
+<h1><%= title %></h1>
+
+<p>Transaction Id <%= txid %></p>
+<p>Block <a href="/id/<%= blockHash %>"><%= blockHash %></a></p>
+<p>In ??? LTC</p>
+<p>Out ??? LTC</p>
+<p>Transaction Fee ??? LTC</p>
+<p>Lock Time <%= locktime %></p>
+<p>Size <%= size %> bytes</p>
+<p>Version <%= version %></p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Inputs</th>
+			<th>Outputs</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<% for(var i=0; i<vin.length; i++) { %>
+					<% if (vin[i].hasOwnProperty('coinbase')) { %>
+						<p>Coinbase <%= vin[i].coinbase %></p>
+						<p>Sequence <%= vin[i].sequence %></p>
+					<% } %>
+				<% } %>
+			</td>
+			<td>
+				<% for(var i=0; i<vout.length; i++) { %>
+					<p> 
+						Index <%= vout[i].n %>, 
+						<%= vout[i].value %> LTC,
+						<% for(var j=0; j<vout[i].scriptPubKey.addresses.length; j++) { %>
+							<%= vout[i].scriptPubKey.addresses[j] %>
+						<% } %>
+					</p> 
+				<% } %>
+			</td>
+	</tbody>
+</table>

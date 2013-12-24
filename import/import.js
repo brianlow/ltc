@@ -46,13 +46,14 @@ function importBlock(index) {
 			f.slot(block);
 			var group = f.group();
 			rawTransactions.forEach(function(rawTransaction) {
-				client.decodeRawTransaction(rawTransaction, group.slot());
+				decodeRawTransaction(rawTransaction, group.slot());
 			});
 		},
 		function(block, transactions) {
 			var group = f.group();
 			transactions.forEach(function(transaction) {
 				transaction.type = "transaction";
+				transaction.blockHash = block.hash;
 				db.put(transaction.txid, transaction, group.wait());
 			});
 		}
@@ -61,6 +62,25 @@ function importBlock(index) {
 	});
 
 };
+
+function decodeRawTransaction(rawTransaction, callback) {
+
+	var f = ff(
+		function() {
+			client.decodeRawTransaction(rawTransaction, f.slot());
+		},
+		function(transaction) {
+			transaction.size = rawTransaction.length / 2; // hex encoded
+			f.slot(transaction);
+		}
+	)
+		.onSuccess(function(transaction) {
+			callback(null, transaction);
+		})
+		.onError(function(err) {
+			callback(err);
+		});
+}
 
 for (var i = 0; i < 100; i++) {
 	importBlock(i);

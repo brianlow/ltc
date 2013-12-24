@@ -39,6 +39,12 @@ app.get('/id/:id([a-z0-9]+)', function(req, res) {
 			res.render('block', value);
 			return;
 		}
+		if (value.type === "transaction")
+		{
+			value.shortTxId = value.txid.substr(0, 6);
+			res.render('transaction', value);
+			return;
+		}
 		res.send(value);
 	})
 });
